@@ -19,7 +19,7 @@ You'll also want to add `Google Play Services CGM <https://developers.google.com
 Install from jar archive
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-You'll need to download the `kwssdk-<sdk_version_kws_android>.jar<https://github.com/SuperAwesomeLTD/sa-kws-android-sdk-docs/blob/master/source/res/kwssdk-<sdk_version_kws_android>.aar?raw=true>`_ file and add it to your project's **libs** folder.
+You'll need to download the `kwssdk-<sdk_version_kws_android>.jar <https://github.com/SuperAwesomeLTD/sa-kws-android-sdk-docs/blob/master/source/res/kwssdk-<sdk_version_kws_android>.aar?raw=true>`_ file and add it to your project's **libs** folder.
 The in your Android Studio project you'll need to add it as a library / dependency to your current project.
 
 Finally, you'll need to update your **AndroidManifest.xml** file to add some services to the application:
