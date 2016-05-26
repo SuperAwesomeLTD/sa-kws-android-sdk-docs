@@ -19,7 +19,7 @@ sdk_version_web="2.0.0"
 sdk_version_flash="3.2.3"
 sdk_version_kws="1.0.0"
 sdk_version_kws_ios="1.0.2"
-sdk_version_kws_android="1.0.1"
+sdk_version_kws_android="1.0.2"
 sdk_source="https://github.com/SuperAwesomeLTD/sa-kws-android-sdk"
 sdk_author="Gabriel Coman"
 

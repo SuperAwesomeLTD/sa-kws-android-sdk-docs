@@ -10,6 +10,12 @@ You'll need to modify the **build.gradle** file under your **/app** folder to ad
 
 .. code-block:: shell
 
+    repositories {
+        maven {
+            url  "http://dl.bintray.com/gabrielcoman/maven"
+        }
+    }
+
     dependencies {
         compile 'kws.superawesome.tv:kwssdk:<sdk_version_kws_android>'
     }
