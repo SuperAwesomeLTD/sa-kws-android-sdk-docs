@@ -6,9 +6,9 @@ sdk_theme="satheme"
 
 cd source
 
-sed -i sedbak "s|<sdk_theme_folder>|$sdk_theme_folder|g" *.*
-sed -i sedbak "s|<sdk_themeres_folder>|$sdk_themeres_folder|g" *.*
-sed -i sedbak "s|<sdk_theme>|$sdk_theme|g" *.*
+sed -i.sedbak "s|<sdk_theme_folder>|$sdk_theme_folder|g" *.*
+sed -i.sedbak "s|<sdk_themeres_folder>|$sdk_themeres_folder|g" *.*
+sed -i.sedbak "s|<sdk_theme>|$sdk_theme|g" *.*
 find . -name "*.*sedbak" -print0 | xargs -0 rm
 
 # delete old theme
