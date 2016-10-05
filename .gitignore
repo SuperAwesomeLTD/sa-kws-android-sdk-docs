@@ -3,3 +3,6 @@ source/themes/*
 source/themeres/*
 themes/*
 themeres/*
+versions/*/build/*
+versions/*/source/themes/*
+versions/*/source/themeres/*

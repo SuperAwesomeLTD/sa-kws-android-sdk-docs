@@ -1,0 +1,19 @@
+{
+	"id": "sa-kws-android-sdk",
+	"theme": {
+		"folder": "themes",
+		"res": "themeres",
+		"name": "satheme"
+	},
+	"project": {
+		"name": "Android SDK",
+		"author": "Gabriel Coman",
+		"source": "https://github.com/SuperAwesomeLTD/sa-kws-android-sdk",
+		"domain": "KWS",
+		"min": "Android 3.0+"
+	},
+	"company": {
+		"name": "2016, SuperAwesome Ltd",
+		"support": "devsupport@superawesome.tv"
+	}
+}

@@ -9,10 +9,10 @@ This is the SuperAwesome Android SDK that enables safe remote notifications thro
 =========== ========
 Info        Contents
 =========== ========
-Version     <sdk_version_kws_android>
-IOS Support <sdk_androidmin>
+Version     <sdk_version>
+Support     <sdk_min>
 GitHub      <sdk_source>
-Support     `<sdk_devsuspport> <mailto:<sdk_devsuspport>>`_
+Contact     `<sdk_devsuspport> <mailto:<sdk_devsuspport>>`_
 License     `LICENSE <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-kws-android-sdk/master/LICENSE>`_
 =========== ========
 
