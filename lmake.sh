@@ -26,6 +26,7 @@ then
 		mkdir build
 		mkdir build/html/
 
+
 		# Step 3: goto main versions folder
 		cd versions
 
