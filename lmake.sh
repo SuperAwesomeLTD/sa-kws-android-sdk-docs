@@ -13,6 +13,7 @@ then
 	sdk_id=$(cat buildata.json | jq -r '.id')
 	sdk_source=$(cat buildata.json | jq -r '.project.source')
 	sdk_support=$(cat buildata.json | jq -r '.company.support')
+	sdk_company=$(cat buildata.json | jq -r '.company.name')
 	sdk_current_version="0.0.0"
 
 	if [ -d versions ]
@@ -105,6 +106,7 @@ then
 
 				# replace variables in rsource
 				cd rsource
+				sed -i.sedbak "s|<sdk_company>|$sdk_company|g" *.*
 				sed -i.sedbak "s|<sdk_project>|$sdk_project|g" *.*
 				sed -i.sedbak "s|<sdk_author>|$sdk_author|g" *.*
 				sed -i.sedbak "s|<sdk_domain>|$sdk_domain|g" *.*
