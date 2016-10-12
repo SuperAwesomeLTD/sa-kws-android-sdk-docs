@@ -40,7 +40,7 @@ then
 			SUM=0;
 			for i in ${dotArray[@]};
 			do
-				pow=$((10**$len))
+				pow=$((100**$len))
 				SUM=$(($SUM + $i*$pow));
 				len=$(($len-1))
 		  done;
