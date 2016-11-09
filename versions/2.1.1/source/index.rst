@@ -26,7 +26,8 @@ Table of Contents:
 .. toctree::
    :maxdepth: 2
 
-	 Integrate the SDK <00integrate>
+	 Add the SDK through Gradle <00addgradle>
+	 Add the SDK as a JAR library <00addjar>
 	 Overview <01overview>
 	 Start a new KWS session <02session>
    Get user details <03userdetails>

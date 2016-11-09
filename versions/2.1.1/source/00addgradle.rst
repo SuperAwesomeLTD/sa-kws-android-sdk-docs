@@ -1,5 +1,5 @@
-Integrate the SDK
-=================
+Add the SDK through Gradle
+==========================
 
 The simplest way of installing the Kids Web Services SDK in Android Studio is to download the AAR library through Gradle.
 
@@ -21,7 +21,7 @@ Next you need to add the full Kids Web Services Android SDK as a dependency.
       compile 'kws.superawesome.tv.kwssdk:kwssdk:<sdk_version>'
     }
 
-Once you've integrated the Kids Web Services SDK, you can access all functionality by including the following headers:
+Once you've integrated the Kids Web Services SDK, you can access all functionality by including:
 
 .. code-block:: java
 
