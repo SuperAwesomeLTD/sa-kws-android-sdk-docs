@@ -6,7 +6,7 @@ It's built on top of the KWS API and tries to manage the complexity of interacti
 
 .. note::
 
-	When using the SDK you will have to first authenticate as a user with the KWS back-end and receive an OAuth 2.0 Token in return, that you'll use to setup a session.
+	When using the SDK you will have to first authenticate as a user with the KWS back-end to be able to access the complete SDK functionality.
 
 The Kids Web Services SDK will then handle the following topics on your behalf:
 
