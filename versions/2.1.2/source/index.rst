@@ -30,6 +30,10 @@ Table of Contents:
 	 Add the SDK as a JAR library <00addjar>
 	 Overview <01overview>
 	 Start a new KWS session <02session>
+	 Creating a new user <02create>
+	 Login as user <02login>
+	 Persisting the user <02persist>
+	 Logout a user <02logout>
    Get user details <03userdetails>
    Update user <04userupdate>
    Request permissions <05userpermission>
