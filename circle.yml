@@ -5,7 +5,7 @@ machine:
 dependencies:
     pre:
         - sudo apt-get update
-        - sudo apt-get install python-sphinx
+        - sudo apt-get install -y python-sphinx python-dev
         - sudo pip install awscli --ignore-installed six
     override:
         - ./lmake.sh
