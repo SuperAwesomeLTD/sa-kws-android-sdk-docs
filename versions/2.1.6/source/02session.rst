@@ -16,7 +16,7 @@ To set it up you will have to call:
 
   private static final String CLIENT_ID     @"id"
   private static final int    APP_ID        30303
-	private static final String CLIENT_SECRET @"client_secret"
+  private static final String CLIENT_SECRET @"client_secret"
   private static final String API           @"kws_api"
 
 
