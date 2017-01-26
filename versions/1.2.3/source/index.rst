@@ -1,19 +1,18 @@
-.. This page should present an overview of the whole documentation, with a TOC
-   as well as a main table that lists the most important stuff about the project
+Kids Web Services Children's Android SDK
+========================================
 
-Kids Web Services Android SDK
-=============================
-
-This is the SuperAwesome Android SDK that enables safe remote notifications through Kids Web Services.
+The Kids Web Services platform provides a set of compliance-as-a-service tools to create a kid-safe, COPPA-compliant framework for kids sites and apps.
+Focus on delivering awesome content, whilst KWS manages the legal complexity of data-collection for you.
+With simplicity built into its core, you will be able to effortlessly integrate Kids Web Services within your current technology.
 
 =========== ========
 Info        Contents
 =========== ========
-Version     <sdk_version>
-Support     <sdk_min>
+Version     <sdk_version> (`Changelog <https://github.com/SuperAwesomeLTD/sa-kws-android-sdk/blob/master/CHANGELOG.md>`_)
+Support 		<sdk_min>
 GitHub      <sdk_source>
 Contact     `<sdk_devsuspport> <mailto:<sdk_devsuspport>>`_
-License     `LICENSE <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-kws-android-sdk/master/LICENSE>`_
+License     `GNU General Public License Version 3 <https://github.com/SuperAwesomeLTD/sa-kws-android-sdk/blob/master/LICENSE>`_
 =========== ========
 
 Table of Contents:
