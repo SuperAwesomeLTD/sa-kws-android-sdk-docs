@@ -12,7 +12,7 @@ Version     <sdk_version> (`Changelog <https://github.com/SuperAwesomeLTD/sa-kws
 Support 		<sdk_min>
 GitHub      <sdk_source>
 Contact     `<sdk_devsuspport> <mailto:<sdk_devsuspport>>`_
-License     `GNU General Public License Version 3 <https://github.com/SuperAwesomeLTD/sa-kws-android-sdk/blob/master/LICENSE>`_
+License     `GNU Lesser General Public License Version 3 <https://github.com/SuperAwesomeLTD/sa-kws-android-sdk/blob/master/LICENSE>`_
 =========== ========
 
 Kids Web Services Demo App
