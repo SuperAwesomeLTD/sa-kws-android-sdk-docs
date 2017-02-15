@@ -5,7 +5,10 @@ You can associate a parent email for the user you're authenticated as by calling
 
 .. code-block:: java
 
-  KWS.sdk.submitParentEmail (MainActivity, "parent@test.com", new KWSParentEmailInterface() {
+  KWS.sdk.submitParentEmail (MainActivity.this,
+                            "parent@test.com",
+                            new KWSParentEmailInterface ()
+  {
     @Override
     public void submitted (KWSParentEmailStatus status) {
 

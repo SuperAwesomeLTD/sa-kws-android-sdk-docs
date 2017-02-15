@@ -5,7 +5,7 @@ You can invite other users on behalf of the user you're authenticated as by call
 
 .. code-block:: java
 
-  KWS.sdk.inviteUser (MainActivity, "friend@test.com", new KWSInviteUserInterface() {
+  KWS.sdk.inviteUser (MainActivity.this, "friend@test.com", new KWSInviteUserInterface() {
     @Override
     public void invited (boolean success) {
       // handle success

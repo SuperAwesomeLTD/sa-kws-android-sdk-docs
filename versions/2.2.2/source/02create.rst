@@ -5,12 +5,12 @@ You can create a new one by calling:
 
 .. code-block:: java
 
-  KWS.sdk.createUser(MainActivity,
+  KWS.sdk.createUser(MainActivity.thos,
                      "username",
                      "password",
                      "2011-03-02",
                      "US",
-                     "dev.gabriel.coman@gmail.com",
+                     "parent@test.com",
                      new KWSCreateUserProcessInterface ()
   {
     @Override

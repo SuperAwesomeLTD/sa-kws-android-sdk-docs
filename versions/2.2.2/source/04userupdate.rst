@@ -12,7 +12,7 @@ You can update information for the user you're authenticated as by calling:
   updatedUser.lastName = "Name";
 
   // call the following method to update a users' details
-  KWS.sdk.updateUser (MainActivity, new KWSUpdateUserInterface(){
+  KWS.sdk.updateUser (MainActivity.this, new KWSUpdateUserInterface(){
     @Overwrite
     void updated (boolean updated) {
       // handle update

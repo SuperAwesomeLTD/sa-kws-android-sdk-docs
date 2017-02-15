@@ -5,7 +5,7 @@ To login as a user you'll have to call:
 
 .. code-block:: java
 
-  KWS.sdk.loginUser (MainActivity,
+  KWS.sdk.loginUser (MainActivity.this,
                      "username",
                      "password",
                      new KWSAuthUserProcessInterface ()

@@ -25,7 +25,7 @@ You can start registering for Remote Notifications by calling:
   })
 
   // use that callback as parameter for the SDK register method
-  KWS.sdk.register (MainActivity, calback);
+  KWS.sdk.register (MainActivity.this, calback);
 
 The callback will pass the following values on completion:
 
@@ -108,7 +108,7 @@ A good example of handling different scenarios would be the following:
   };
 
   // try to register for remote notifications
-  KWS.sdk.register (MainActivity, callback);
+  KWS.sdk.register (MainActivity.this, callback);
 
 Unregister
 ^^^^^^^^^^
@@ -117,7 +117,7 @@ Reversely, you can unregister the user you're authenticated as by calling:
 
 .. code-block:: java
 
-  KWS.sdk.unregister (MainActivity, new UnregisterInterface() {
+  KWS.sdk.unregister (MainActivity.this, new UnregisterInterface() {
     @Override
     public void unregister (boolean unregistered) {
       // hand unregister
@@ -139,7 +139,7 @@ Finally, you can check if the user you're authenticated as is already registered
 
 .. code-block:: java
 
-  KWS.sdk.isRegistered (MainActivity, new IsRegisteredInterface() {
+  KWS.sdk.isRegistered (MainActivity.this, new IsRegisteredInterface() {
     @Override
     public void isRegistered (boolean registered) {
       // handle is registered

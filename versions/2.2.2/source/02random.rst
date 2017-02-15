@@ -13,7 +13,7 @@ Once that's done, it's a simple as calling:
 
 .. code-block:: objective-c
 
-  KWS.sdk.generateRandomName (MainActivity, new KWSRandomNameInterface() {
+  KWS.sdk.generateRandomName (MainActivity.this, new KWSRandomNameInterface() {
     @Override
     public void gotRandomName(String name) {
       // if the name parameter is null, no name could be generated or

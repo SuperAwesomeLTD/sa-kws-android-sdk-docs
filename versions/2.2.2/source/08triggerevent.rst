@@ -11,11 +11,11 @@ You can trigger an event for the user you're authenticated as by calling:
 
 .. code-block:: java
 
-  KWS.sdk.triggerEvent (MainActivity, "app-data", 15, new KWSTriggerEventInterface() {
+  KWS.sdk.triggerEvent (MainActivity.this, "app-data", 15, new KWSTriggerEventInterface() {
     @Override
     public void triggered (boolean success) {
       // handle success
-	  }
+    }
   });
 
 The method has the following parameters:

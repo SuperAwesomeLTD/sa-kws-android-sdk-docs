@@ -5,7 +5,7 @@ To obtain information on the user you're authenticated as you'll need to call:
 
 .. code-block:: java
 
-  KWS.sdk.getUser (MainActivity, new KWSGetUserInterface(){
+  KWS.sdk.getUser (MainActivity.this, new KWSGetUserInterface(){
     @Overwrite
     void getUser (KWSUser *user) {
       // handle user data

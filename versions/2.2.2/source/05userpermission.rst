@@ -16,7 +16,10 @@ Thus, to request permission for the user you're authenticated as you'll need to 
   };
 
   // request permission
-  KWS.sdk.requestPermission (MainActivity, permissions, new KWSRequestPermissionInterface() {
+  KWS.sdk.requestPermission (MainActivity.this,
+                             permissions,
+		                         new KWSRequestPermissionInterface()
+  {
     @Override
     public void requested (KWSPermissionStatus status) {
 

@@ -7,7 +7,7 @@ You can add a pair of such data for the user you're authenticated as by calling:
 
 .. code-block:: java
 
-  KWS.sdk.setAppData (MainActivity, "app-data", 15, new KWSSetAppDataInterface() {
+  KWS.sdk.setAppData (MainActivity.this, "app-data", 15, new KWSSetAppDataInterface() {
     @Override
     public void setAppData (boolean success) {
       // handle success
