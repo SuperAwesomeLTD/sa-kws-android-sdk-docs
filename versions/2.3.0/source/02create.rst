@@ -5,16 +5,16 @@ You can create a new one by calling:
 
 .. code-block:: java
 
-  KWS.sdk.createUser(MainActivity.thos,
-                     "username",
-                     "password",
-                     "2011-03-02",
-                     "US",
-                     "parent@test.com",
-                     new KWSCreateUserProcessInterface ()
+  KWSChildren.sdk.createUser(MainActivity.thos,
+                             "username",
+                             "password",
+                             "2011-03-02",
+                             "US",
+                             "parent@test.com",
+                             new KWSChildrenCreateUserInterface ()
   {
     @Override
-    public void userCreated(KWSCreateUserStatus status) {
+    public void didCreateUser (KWSChildrenCreateUserStatus status) {
 
       switch (status) {
         case Success:
@@ -32,11 +32,11 @@ You can create a new one by calling:
 
 The callback will pass the following values on completion:
 
-======= =================== ======
-Value   Type                Meaning
-======= =================== ======
-status  KWSCreateUserStatus End status of the operation
-======= =================== ======
+======= =========================== ======
+Value   Type                        Meaning
+======= =========================== ======
+status  KWSChildrenCreateUserStatus End status of the operation
+======= =========================== ======
 
 The **status** parameter may have the following values:
 

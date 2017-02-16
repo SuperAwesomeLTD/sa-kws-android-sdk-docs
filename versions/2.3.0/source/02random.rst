@@ -13,9 +13,11 @@ Once that's done, it's a simple as calling:
 
 .. code-block:: objective-c
 
-  KWS.sdk.generateRandomName (MainActivity.this, new KWSRandomNameInterface() {
+  KWSChildren.sdk.getRandomUsername (MainActivity.this,
+                                     new KWSChildrenGetRandomUsernameInterface ()
+  {
     @Override
-    public void gotRandomName(String name) {
+    public void didGetRandomUsername (String name) {
       // if the name parameter is null, no name could be generated or
       // KWS is down;
       // Otherwise it will return a valid, unique name based on the values

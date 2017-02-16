@@ -5,9 +5,11 @@ You can get the current application leaderboard by calling:
 
 .. code-block:: java
 
-  KWS.sdk.getLeaderBoard (MainActivity.this, new KWSGetLeaderboardInterface() {
+  KWSChildren.sdk.getLeaderboard (MainActivity.this,
+                                  new KWSChildrenGetLeaderboardInterface()
+  {
     @Override
-    public void gotLeaderboard (List<KWSLeader*> *leaderboard) {
+    public void didGetLeaderboard (List<KWSLeader*> *leaderboard) {
       // show leaderboard
 	  }
   });

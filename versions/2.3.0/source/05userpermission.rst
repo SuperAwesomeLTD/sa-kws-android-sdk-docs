@@ -10,18 +10,18 @@ Thus, to request permission for the user you're authenticated as you'll need to 
 .. code-block:: java
 
   // create an array of permissions
-  KWSPermissionType[] permissions = new KWSPermissionType [] {
-    KWSPermissionType.accessEmail,
-    KWSPermissionType.accessFirstName
+  KWSChildrenPermissionType[] permissions = new KWSChildrenPermissionType [] {
+    KWSChildrenPermissionType.AccessEmail,
+    KWSChildrenPermissionType.AccessFirstName
   };
 
   // request permission
-  KWS.sdk.requestPermission (MainActivity.this,
-                             permissions,
-		                         new KWSRequestPermissionInterface()
+  KWSChildren.sdk.requestPermission (MainActivity.this,
+                                     permissions,
+                                     new KWSChildrenRequestPermissionInterface()
   {
     @Override
-    public void requested (KWSPermissionStatus status) {
+    public void didRequestPermission (KWSChildrenRequestPermissionStatus status) {
 
       switch (status) {
         case Success:
@@ -36,11 +36,11 @@ Thus, to request permission for the user you're authenticated as you'll need to 
 
 The callback will pass the following values on completion:
 
-====== =================== ======
-Value  Type                Meaning
-====== =================== ======
-status KWSPermissionStatus End status of the operation
-====== =================== ======
+====== ================================== ======
+Value  Type                               Meaning
+====== ================================== ======
+status KWSChildrenRequestPermissionStatus End status of the operation
+====== ================================== ======
 
 The **status** parameter may have the following values:
 
@@ -57,17 +57,17 @@ And the available permissions are:
 +-------------------+
 | **Permission**    |
 +-------------------+
-| accessEmail       |
+| AccessEmail       |
 +-------------------+
-| accessAddress     |
+| AccessAddress     |
 +-------------------+
-| accessFirstName   |
+| AccessFirstName   |
 +-------------------+
-| accessLastName    |
+| AccessLastName    |
 +-------------------+
-| accessPhoneNumber |
+| AccessPhoneNumber |
 +-------------------+
-| sendNewsletter    |
+| SendNewsletter    |
 +-------------------+
 
 .. note::

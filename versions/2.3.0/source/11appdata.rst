@@ -7,9 +7,13 @@ You can add a pair of such data for the user you're authenticated as by calling:
 
 .. code-block:: java
 
-  KWS.sdk.setAppData (MainActivity.this, "app-data", 15, new KWSSetAppDataInterface() {
+  KWSChildren.sdk.setAppData (MainActivity.this,
+                              "app-data",
+                              15,
+                              new KWSChildrenSetAppDataInterface ()
+  {
     @Override
-    public void setAppData (boolean success) {
+    public void didSetAppData (boolean success) {
       // handle success
     }
   });
@@ -39,9 +43,9 @@ If on the other hand you want to get the app data for the user you're authentica
 
 .. code-block:: java
 
-  KWS.sdk.getAppData (MainActivity, new KWSGetAppDataInterface() {
+  KWS.sdk.getAppData (MainActivity, new KWSChildrenGetAppDataInterface() {
     @Override
-    public void gotAppData (List<KWSAppData*> *appData) {
+    public void didGetAppData (List<KWSAppData*> *appData) {
       // handle app data
 	  }
   });

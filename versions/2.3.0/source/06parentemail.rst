@@ -5,12 +5,12 @@ You can associate a parent email for the user you're authenticated as by calling
 
 .. code-block:: java
 
-  KWS.sdk.submitParentEmail (MainActivity.this,
-                            "parent@test.com",
-                            new KWSParentEmailInterface ()
+  KWSChildren.sdk.updateParentEmail (MainActivity.this,
+                                     "parent@test.com",
+                                     new KWSChildrenUpdateParentEmailInterface ()
   {
     @Override
-    public void submitted (KWSParentEmailStatus status) {
+    public void didUpdateParentEmail (KWSChildrenUpdateParentEmailStatus status) {
 
       switch (type) {
         case Success:
@@ -25,11 +25,11 @@ You can associate a parent email for the user you're authenticated as by calling
 
 The callback will pass the following value on completion:
 
-====== ==================== ======
-Value                       Type Meaning
-====== ==================== ======
-status KWSParentEmailStatus End status of the operation
-====== ==================== ======
+====== ================================== ======
+Value                                     Type Meaning
+====== ================================== ======
+status KWSChildrenUpdateParentEmailStatus End status of the operation
+====== ================================== ======
 
 The **status** parameter may have the following values:
 
@@ -49,9 +49,9 @@ There's also a quick hand version of this method that displays a standard system
 
 .. code-block:: java
 
-  KWS.sdk.submitParentEmailWithPopup (MainActivity, new KWSParentEmailInterface() {
+  KWSChildren.sdk.updateParentEmailWithPopup (MainActivity, new KWSChildrenUpdateParentEmailInterface() {
     @Override
-		  public void submitted (KWSParentEmailStatus status) {
+		  public void didUpdateParentEmail (KWSChildrenUpdateParentEmailStatus status) {
 				// handle email submit
       }
   });

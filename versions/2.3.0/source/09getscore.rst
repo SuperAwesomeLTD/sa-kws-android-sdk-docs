@@ -5,9 +5,9 @@ You can get the current score of the use you're authenticated as by calling:
 
 .. code-block:: java
 
-  KWS.sdk.getScore (MainActivity.this, new KWSGetScoreInterface() {
+  KWSChildren.sdk.getScore (MainActivity.this, new KWSChildrenGetScoreInterface() {
     @Override
-    public void gotScore (KWSScore *score) {
+    public void didGetScore (KWSScore *score) {
       // handle score
     }
   });

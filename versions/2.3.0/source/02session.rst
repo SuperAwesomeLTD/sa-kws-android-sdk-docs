@@ -18,7 +18,7 @@ To set it up you will have to call:
   private static final String API           @"kws_api"
 
 
-  KWS.sdk.startSession (MainActivity.this, CLIENT_ID, CLIENT_SECRET, API);
+  KWSChildren.sdk.setup (MainActivity.this, CLIENT_ID, CLIENT_SECRET, API);
 
 You can obtain the Client Id, Client Secret and API host from the **Integration** section of your Kids Web Services Control Panel.
 

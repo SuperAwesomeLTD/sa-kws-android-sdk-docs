@@ -5,13 +5,13 @@ To login as a user you'll have to call:
 
 .. code-block:: java
 
-  KWS.sdk.loginUser (MainActivity.this,
-                     "username",
-                     "password",
-                     new KWSAuthUserProcessInterface ()
+  KWSChildren.sdk.loginUser (MainActivity.this,
+                             "username",
+                             "password",
+                             new KWSChildrenLoginUserInterface ()
   {
     @Override
-    public void userAuthenticated(KWSAuthUserStatus status) {
+    public void didLoginUser (KWSChildrenLoginUserStatus status) {
 
       switch (status) {
         case Success:
@@ -29,11 +29,11 @@ To login as a user you'll have to call:
 
 The callback will pass the following values on completion:
 
-====== ================= ======
-Value  Type              Meaning
-====== ================= ======
-status KWSAuthUserStatus End status of the operation
-====== ================= ======
+====== ========================== ======
+Value  Type                       Meaning
+====== ========================== ======
+status KWSChildrenLoginUserStatus End status of the operation
+====== ========================== ======
 
 The **status** parameter may have the following values:
 

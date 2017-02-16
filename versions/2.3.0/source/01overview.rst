@@ -38,14 +38,14 @@ Thus any method call will have the following pattern:
 
 .. code-block:: java
 
-  KWS.sdk.methodCall ();
+  KWSChildren.sdk.methodCall ();
 
 Since most operations performed by the SDK involve doing network requests on KWS API, most method calls won't have a return type but will instead require a callback,
 defined as an Java interface with a variable number of parameters.
 
 .. code-block:: java
 
-  KWS.sdk.methodCall (new KWSInterface () {
+  KWSChildren.sdk.methodCall (new KWSInterface () {
     @Overwrite
     void response (bool result) {
       // handle result
@@ -59,7 +59,7 @@ Some methods also can have one or two parameters. In this case they will have th
 
 .. code-block:: java
 
-  KWS.sdk.methodCall(int parm1, String param2, new KWSInterface () {
+  KWSChildren.sdk.methodCall(int parm1, String param2, new KWSInterface () {
     @Overwrite
     void response (bool result) {
       // handle result

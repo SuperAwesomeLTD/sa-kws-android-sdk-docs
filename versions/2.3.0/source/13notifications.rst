@@ -17,15 +17,17 @@ You can start registering for Remote Notifications by calling:
 .. code-block:: java
 
   // declare a new Callback of type "registered"
-  RegisterInterface callback = new RegisterInterface () {
+  KWSChildrenRegisterForRemoteNotificationsInterface callback =
+  new KWSChildrenRegisterForRemoteNotificationsInterface ()
+  {
     @Override
-    public void register (KWSNotificationStatus status) {
+    public void didRegisterForRemoteNotifications (KWSChildrenRegisterForRemoteNotificationsStatus status) {
 
     }
   })
 
   // use that callback as parameter for the SDK register method
-  KWS.sdk.register (MainActivity.this, calback);
+  KWSChildren.sdk.registerForRemoteNotifications (MainActivity.this, callback);
 
 The callback will pass the following values on completion:
 
@@ -68,9 +70,11 @@ A good example of handling different scenarios would be the following:
 
 .. code-block:: java
 
-  final RegisterInterface callback = new RegisterInterface () {
+  final KWSChildrenRegisterForRemoteNotificationsInterface callback =
+  new KWSChildrenRegisterForRemoteNotificationsInterface ()
+  {
     @Override
-    public void register (KWSNotificationStatus status) {
+    public void didRegisterForRemoteNotifications (KWSChildrenRegisterForRemoteNotificationsStatus status) {
 
       switch (status) {
         case Success: {
@@ -88,12 +92,14 @@ A good example of handling different scenarios would be the following:
         // user has no parent email submitted
         case NoParentEmail: {
 
-          KWS.sdk.submitParentEmailWithPopup (MainActivity.this, new KWSParentEmailInterface() {
+          KWSChildren.sdk.updateParentEmailWithPopup (MainActivity.this,
+                                                      new KWSChildrenUpdateParentEmailInterface()
+          {
             @Override
-            public void submitted (KWSParentEmailStatus emailStatus) {
+            public void didUpdateParentEmail (KWSChildrenUpdateParentEmailStatus emailStatus) {
               switch (emailStatus) {
                 case Success:
-                  KWS.sdk.register (MainActivity.this, callback);
+                  KWSChildren.sdk.registerForRemoteNotifications (MainActivity.this, callback);
                   break;
               }
             }
@@ -108,7 +114,7 @@ A good example of handling different scenarios would be the following:
   };
 
   // try to register for remote notifications
-  KWS.sdk.register (MainActivity.this, callback);
+  KWSChildren.sdk.registerForRemoteNotifications (MainActivity.this, callback);
 
 Unregister
 ^^^^^^^^^^
@@ -117,9 +123,11 @@ Reversely, you can unregister the user you're authenticated as by calling:
 
 .. code-block:: java
 
-  KWS.sdk.unregister (MainActivity.this, new UnregisterInterface() {
+  KWSChildren.sdk.unregisterForRemoteNotifications (MainActivity.this,
+                                                    new KWSChildrenUnregisterForRemoteNotificationsInterface()
+  {
     @Override
-    public void unregister (boolean unregistered) {
+    public void didUnregisterForRemoteNotifications (boolean unregistered) {
       // hand unregister
     }
   });
@@ -139,9 +147,11 @@ Finally, you can check if the user you're authenticated as is already registered
 
 .. code-block:: java
 
-  KWS.sdk.isRegistered (MainActivity.this, new IsRegisteredInterface() {
+  KWSChildren.sdk.isRegisteredForRemoteNotifications (MainActivity.this,
+                                                      new KWSChildrenIsRegisteredForRemoteNotificationsInterface()
+  {
     @Override
-    public void isRegistered (boolean registered) {
+    public void isRegisteredForRemoteNotifications (boolean registered) {
       // handle is registered
     }
   });
