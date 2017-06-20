@@ -1,5 +1,5 @@
-Kids Web Services Children's Android SDK
-========================================
+Kids Web Services Android (for Kids apps) SDK
+=============================================
 
 The Kids Web Services platform provides a set of compliance-as-a-service tools to create a kid-safe, COPPA-compliant framework for kids sites and apps.
 Focus on delivering awesome content, whilst KWS manages the legal complexity of data-collection for you.
