@@ -6,6 +6,7 @@ then
 	sdk_theme_folder=$(cat buildata.json | jq -r '.theme.folder')
 	sdk_themeres_folder=$(cat buildata.json | jq -r '.theme.res')
 	sdk_theme=$(cat buildata.json | jq -r '.theme.name')
+	sdk_color=$(cat buildata.json | jq -r '.theme.color')
 	sdk_project=$(cat buildata.json | jq -r '.project.name')
 	sdk_domain=$(cat buildata.json | jq -r '.project.domain')
 	sdk_author=$(cat buildata.json | jq -r '.project.author')
@@ -93,6 +94,14 @@ then
 				mkdir $sdk_theme_folder/$sdk_theme
 				mkdir $sdk_themeres_folder
 				cp -rf sa-docs-sphinx-theme/* $sdk_theme_folder/$sdk_theme/
+
+				cd $sdk_theme_folder/$sdk_theme/static/css
+
+				sed -i.sedbak "s|background-color: #c32e21;|background-color: #$sdk_color;|g" *.*
+				find . -name "*.*sedbak" -print0 | xargs -0 rm
+
+				cd ../../../..
+				
 				cp sa-docs-sphinx-theme/static/img/* $sdk_themeres_folder/
 				rm -rf sa-docs-sphinx-theme
 				cd ../

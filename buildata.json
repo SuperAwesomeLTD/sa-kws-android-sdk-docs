@@ -3,7 +3,8 @@
 	"theme": {
 		"folder": "themes",
 		"res": "themeres",
-		"name": "satheme"
+		"name": "satheme",
+		"color": "46237A"
 	},
 	"project": {
 		"name": "",
