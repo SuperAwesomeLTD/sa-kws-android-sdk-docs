@@ -101,8 +101,9 @@ then
 				find . -name "*.*sedbak" -print0 | xargs -0 rm
 
 				cd ../../../..
-				
+
 				cp sa-docs-sphinx-theme/static/img/* $sdk_themeres_folder/
+				cp $sdk_themeres_folder/kws_logo.png $sdk_themeres_folder/logo.png
 				rm -rf sa-docs-sphinx-theme
 				cd ../
 
