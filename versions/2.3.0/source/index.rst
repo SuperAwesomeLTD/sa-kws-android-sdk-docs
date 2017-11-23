@@ -39,7 +39,7 @@ Table of Contents
 	 Add the SDK through Gradle <00addgradle>
 	 Add the SDK as a JAR library <00addjar>
 	 Overview <01overview>
-	 Start a new KWS session <02session>
+	 Initialize the SDK <02session>
 	 Creating a new user <02create>
 	 Obtaining a random display name <02random>
 	 Login as user <02login>

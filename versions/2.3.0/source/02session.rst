@@ -1,9 +1,7 @@
-Start a new KWS session
+Initialize the SDK
 =======================
 
-In order to be able to use the Kids Web Services SDK you'll first have to setup a session.
-
-A session is defined by
+In order to be able to use the Kids Web Services SDK you'll first have to initialize it with the following values:
 
 	* a client ID
 	* a client Secret
@@ -26,5 +24,5 @@ They should be different for each app you have.
 
 .. image:: img/kws-integration.png
 
-Once you've setup your SDK session, it's time to authenticate as a user. All of of the functionality of the SDK assumes you're
+Once you've initialized the SDK, it's time to authenticate as a user. All of of the functionality of the SDK assumes you're
 logged in as a user.
