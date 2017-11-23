@@ -11,13 +11,15 @@ It's built on top of the KWS API and tries to manage the complexity of interacti
 The Kids Web Services SDK will then handle the following topics on your behalf:
 
 +------------------------------------------------------+
+| User authentication                                  |
++------------------------------------------------------+
+| Handle permissions to obtain data from users         |
++------------------------------------------------------+
 | Manage an apps' leaderboard                          |
 +------------------------------------------------------+
 | Assign points or virtual currencies                  |
 +------------------------------------------------------+
 | Handle remote notifications in a COPPA-compliant way |
-+------------------------------------------------------+
-| Handle permissions to obtain data from users         |
 +------------------------------------------------------+
 | Assign custom app data                               |
 +------------------------------------------------------+

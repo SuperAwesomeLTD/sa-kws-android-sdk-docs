@@ -1,9 +1,9 @@
-Obtaining a random username
+Obtaining a random display name
 ===========================
 
-Sometimes it's a good idea to preemptively suggest a username to users who want to create a new account.
-Whether you want to ensure usernames are valid, safe and non-duplicate or you wish to align usernames with the
-in game universe you have created, KWS can help you by providing a method to generate random usernames.
+Sometimes it's a good idea to preemptively suggest a display name to users who want to create a new account.
+Whether you want to ensure display names are valid, safe and non-duplicate or you wish to align names with the
+in game universe you have created, KWS can help you by providing a method to generate random display names.
 
 In order for KWS to properly generate then you'll first have to add possible values in your KWS dashboard:
 
