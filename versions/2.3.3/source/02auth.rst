@@ -54,14 +54,14 @@ Finally, once the prerequisite steps have been completed you can call the SDK me
 
 To do so we'll use the **SSO (Single Sign On) URL** obtained from the Kids Web Services Control Panel earlier on.
 
-For our example, that should be something like **https://my.cluser.accounts.kws.superawesome.tv/**.
+For our example, that should be something like **https://my.cluster.accounts.kws.superawesome.tv/**.
 
 .. code-block:: java
 
     // this function takes the SSO URL as the first parameter
     // and an Activity instance as the second parameter
     // as well as a callback listener as the third parameter
-    KWSChildren.sdk.authUser("https://my.cluser.accounts.kws.superawesome.tv/",
+    KWSChildren.sdk.authUser("https://my.cluster.accounts.kws.superawesome.tv/",
                              this,
                              new KWSChildrenLoginUserInterface()
     {
