@@ -18,7 +18,7 @@ The first step is to enable Implicit Flow in your Kids Web Services Control Pane
 Add OAuth redirect URLs
 -----------------------
 
-The second step once you've enabled Implicit Flow is to add *OAuth Redirect URLs** to the Control Panel.
+The second step once you've enabled Implicit Flow is to add **OAuth Redirect URLs** to the Control Panel.
 
 .. image:: img/oauth_2.png
 
