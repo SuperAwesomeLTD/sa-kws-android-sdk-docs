@@ -1,7 +1,10 @@
-Authenticating a user
-=====================
+Creating and authenticating a user
+==================================
 
-To be able to authenticated (login or create) a user through the OAuth Implicit flow you must follow the next steps:
+KWS brandable view
+^^^^^^^^^^^^^^^^^^
+
+To be able to authenticate or create a user through a KWS brandable view you must follow the next steps:
 
 Enable Implicit Flow in the Control Panel
 -----------------------------------------
@@ -99,3 +102,142 @@ Success            User was authenticated successfully
 InvalidCredentials The username or password were incorrect
 NetworkError       Other network error
 ================== ======
+
+Native view
+^^^^^^^^^^^
+
+To be able to authenticate and create a user using your own native views, you can use the following methods:
+
+Creating a user
+---------------
+
+You can also create a new user programmatically by calling:
+
+.. code-block:: java
+
+  KWSChildren.sdk.createUser(MainActivity.thos,
+                             "username",
+                             "password",
+                             "2011-03-02",
+                             "US",
+                             "parent@test.com",
+                             new KWSChildrenCreateUserInterface ()
+  {
+    @Override
+    public void didCreateUser (KWSChildrenCreateUserStatus status) {
+
+      switch (status) {
+        case Success:
+          // create new user OK
+          break;
+        case DuplicateUsername:
+          // another user has the same username
+          break;
+        case NetworkError:
+          // other network error
+          break;
+      }
+    }
+  });
+
+The callback will pass the following values on completion:
+
+======= =========================== ======
+Value   Type                        Meaning
+======= =========================== ======
+status  KWSChildrenCreateUserStatus End status of the operation
+======= =========================== ======
+
+The **status** parameter may have the following values:
+
+================== ======
+Value              Meaning
+================== ======
+Success            User was authenticated successfully
+InvalidUsername    Chosen username contains invalid characters
+InvalidPassword    Password is less than 8 characters
+InvalidDateOfBirth Date should have YYYY-MM-DD format
+InvalidCountry     Country should have CC format
+InvalidParentEmail Parent email is invalid
+DuplicateUsername  The username is already in use
+NetworkError       Other network error
+InvalidOperation   Other invalid operation
+================== ======
+
+From here on you'll be able to check leaderboards, assign points, enable remote notifications, set app data, etc.
+
+Obtaining a random display name
+-------------------------------
+
+Sometimes it's a good idea to preemptively suggest a display name to users who want to create a new account.
+Whether you want to ensure display names are valid, safe and non-duplicate or you wish to align names with the
+in game universe you have created, KWS can help you by providing a method to generate random display names.
+
+In order for KWS to properly generate then you'll first have to add possible values in your KWS dashboard:
+
+.. image:: img/randomnames.png
+
+Once that's done, it's a simple as calling:
+
+.. code-block:: objective-c
+
+  KWSChildren.sdk.getRandomUsername (MainActivity.this,
+                                     new KWSChildrenGetRandomUsernameInterface ()
+  {
+    @Override
+    public void didGetRandomUsername (String name) {
+      // if the name parameter is null, no name could be generated or
+      // KWS is down;
+      // Otherwise it will return a valid, unique name based on the values
+      // you entered in the dashboard
+    }
+  });
+
+Login user
+----------
+
+To login as a user programmatically you'll have to call:
+
+.. code-block:: java
+
+	KWSChildren.sdk.loginUser (MainActivity.this,
+														 "username",
+														 "password",
+														 new KWSChildrenLoginUserInterface ()
+	{
+		@Override
+		public void didLoginUser (KWSChildrenLoginUserStatus status) {
+
+			switch (status) {
+				case Success:
+					// authenticated OK
+					break;
+				case NetworkError:
+					// one of the credentials was not valid
+					break;
+				case InvalidCredentials:
+					// there was a network error
+					break;
+			}
+		}
+	});
+
+The callback will pass the following values on completion:
+
+====== ========================== ======
+Value  Type                       Meaning
+====== ========================== ======
+status KWSChildrenLoginUserStatus End status of the operation
+====== ========================== ======
+
+The **status** parameter may have the following values:
+
+================== ======
+Value              Meaning
+================== ======
+Success            User was authenticated successfully
+InvalidCredentials The username or password were incorrect
+NetworkError       Other network error
+================== ======
+
+From here on you'll be able to check leaderboards, assign points, enable remote notifications, set app data, etc.
