@@ -39,7 +39,7 @@ Table of Contents
 	 Add the SDK through Gradle <00addgradle>
 	 Add the SDK as a JAR library <00addjar>
 	 Overview <01overview>
-	 Initialize the SDK <02session>
+	 Initialise the SDK <02session>
 	 Authenticating a user <02auth>
 	 Creating a user programmatically <02create>
 	 Obtaining a random display name <02random>
