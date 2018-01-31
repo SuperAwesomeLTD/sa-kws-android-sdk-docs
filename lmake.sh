@@ -89,7 +89,8 @@ then
 				rm -rf $sdk_theme_folder
 				rm -rf $sdk_themeres_folder
 				rm -rf sa-docs-sphinx-theme
-				git clone -b master git@github.com:SuperAwesomeLTD/sa-docs-sphinx-theme.git
+                                git clone -b master https://github.com/SuperAwesomeLTD/sa-docs-sphinx-theme.git
+				# git clone -b master git@github.com:SuperAwesomeLTD/sa-docs-sphinx-theme.git
 				mkdir $sdk_theme_folder
 				mkdir $sdk_theme_folder/$sdk_theme
 				mkdir $sdk_themeres_folder
