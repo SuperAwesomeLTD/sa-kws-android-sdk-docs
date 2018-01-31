@@ -1,5 +1,6 @@
 #!/bin/bash -ex
 
+
 # Step 1: get env variables from the buildata JSON
 if [ -f buildata.json ]
 then
