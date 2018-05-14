@@ -50,7 +50,7 @@ Assuming an already setup environment as **myEnvironment** and an interface serv
 
   val myEnvironment = MyEnvironment() //your environment
   val complianceSDK = ComplianceSDK(myEnvironment) //initialize the ComplianceSDK class
-  val myService = complianceSDK.getService(type = IMyService::class.java) //get the 'IService' with desired functionalities
+  val myService = complianceSDK.getService(type = IMyService::class.java) //get the 'IMyService' with desired functionalities
   
   myService.methodCall() //call the method
 

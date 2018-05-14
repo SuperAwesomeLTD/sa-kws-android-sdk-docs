@@ -1,9 +1,9 @@
 Local storage
 ==============
 
-The Kid Web Service SDK allows you to quickly store, check if stored, get stored and logout **user** using the Android local properties.
+The Kid Web Service SDK allows you to quickly and swiftly manage your session.
 
-This is done using the **interface service** named **ISessionService** and its methods.
+This is done using the **ISessionService** and its methods.
 
 
 Store a user
@@ -33,7 +33,7 @@ And should look like:
 
 	val success = authService?.saveLoggedUser(context = this, user = user)
 	
-This is a sync operation that returns:
+This is a **sync** operation that returns:
 
 * true
 * false
@@ -64,7 +64,7 @@ And should look like:
 
 	val isUserLoggedIn = authService?.isUserLoggedIn(this)
 
-This is a sync operation that returns:
+This is a **sync** operation that returns:
 
 * true
 * false
@@ -97,7 +97,7 @@ And should look like:
 
 	return currentStoredUser
 
-This is a sync operation that returns:
+This is a **sync** operation that returns:
 
 ============== ================== =========
 Value           Type               Meaning
@@ -132,7 +132,7 @@ And should look like:
 
 	val success = authService?.clearLoggedUser(this)
 
-This is a sync operation that returns:
+This is a **sync** operation that returns:
 
 * true
 * false

@@ -35,7 +35,7 @@ The third step is to add a new Activity in your Android Manifest file:
 .. code-block:: xml
 
     <activity
-      android:name="kws.superawesome.tv.kwssdk.base.webauth.KWSWebAuthResponse"
+      android:name="kws.superawesome.tv.kwssdk.authentication.webauth.WebAuthController"
       android:exported="true"
       android:launchMode="singleTask">
         <intent-filter>
@@ -83,10 +83,10 @@ As such:
 
     val url = "https://my.cluster.accounts.kws.superawesome.tv/"
 
-    singleSignOnService?.signOn(url = url, parent = this) { responseModel, error ->
+    singleSignOnService?.signOn(url = url, parent = this) { user, error ->
 
-      if (responseModel != null) {
-        //Success! We have a valid responseModel
+      if (user != null) {
+        //Success! We have a valid user
       } else {
         //Uh-oh! It seems there's an error...
       }
@@ -97,7 +97,8 @@ The callback will pass the following values on completion:
 ============== ================== =========
 Value           Type              Meaning
 ============== ================== =========
-responseModel   ILoggedUserModel  If non-null, the SDK was able to authenticate the user
+user            ILoggedUserModel  If non-null, the SDK was able to authenticate the user
+error           Throwable         If non-null, an error occurred
 ============== ================== =========
 
 The **ILoggedUserModel** parameter will have the following values:
@@ -145,10 +146,10 @@ As such:
   val sdk = ComplianceSDK(myEnvironment)
   val authService = sdk.getService(type = IAuthService::class.java)
 
-  authService?.createUser(username = "username", password = "password", timeZone = null, dateOfBirth = "2012-02-02", country = "US", parentEmail = "parent@test.com") { responseModel, error ->
+  authService?.createUser(username = "username", password = "password", timeZone = null, dateOfBirth = "2012-02-02", country = "US", parentEmail = "parent@test.com") { user, error ->
 
-    if (responseModel != null) {
-      //Success! We have a valid responseModel
+    if (user != null) {
+      //Success! We have a valid user
     } else {
       //Uh-oh! It seems there's an error...
     }
@@ -161,7 +162,8 @@ The callback will pass the following values on completion:
 ============== ================== ========
 Value           Type              Meaning
 ============== ================== ========
-responseModel   ILoggedUserModel  If non-null, the SDK was able to authenticate the user
+user            ILoggedUserModel  If non-null, the SDK was able to create an authenticate the user
+error           Throwable         If non-null, an error occurred
 ============== ================== ========
 
 The **ILoggedUserModel** parameter will have the following values:
@@ -200,10 +202,10 @@ As such:
   val sdk = ComplianceSDK(myEnvironment)
   val authService = sdk.getService(type = IAuthService::class.java)
 
-  authService?.loginUser(username = "username", password = "password") { responseModel, error ->
+  authService?.loginUser(username = "username", password = "password") { user, error ->
     
-    if (responseModel != null) {
-      //Success! We have a valid responseModel
+    if (user != null) {
+      //Success! We have a valid user
     } else {
       //Uh-oh! It seems there's an error...
     }
@@ -215,7 +217,8 @@ The callback will pass the following values on completion:
 ============== ================== ========
 Value           Type              Meaning
 ============== ================== ========
-responseModel   ILoggedUserModel  If non-null, the SDK was able to authenticate the user
+user            ILoggedUserModel  If non-null, the SDK was able to authenticate the user
+error           Throwable         If non-null, an error occurred
 ============== ================== ========
 
 The **ILoggedUserModel** parameter will have the following values:
@@ -228,52 +231,9 @@ token          String   The valid session token of the user
 
 From here on you'll be able to check leaderboards, assign points, enable remote notifications, set app data, etc.
 
+.. note::
 
-Obtaining a random display name
--------------------------------
+  After authenticating a user, you can use the Kid Web Service to:
 
-Sometimes it's a good idea to preemptively suggest a display name to users who want to create a new account.
-Whether you want to ensure display names are valid, safe and non-duplicate or you wish to align names with the
-in game universe you have created, KWS can help you by providing a method to generate random display names.
-
-In order for KWS to properly generate then you'll first have to add possible values in your KWS dashboard:
-
-.. image:: img/randomnames.png
-
-Once that's done, it's a simple as using the **interface service** named **IUsernameService** and the method to call is:
-  
-  * **getRandomUsername**
-
-As such:
-
-.. code-block:: java
-
-  //myEnvironment is considered to be a valid environment 
-
-  val sdk = ComplianceSDK(myEnvironment)
-  val usernameService = sdk.getService(IUsernameService::class.java)
-
-  usernameService?.getRandomUsername { responseModel, error ->
-
-    if (responseModel != null) {
-      //Success! We have a valid responseModel
-    } else {
-      //Uh-oh! It seems there's an error...
-    }
-  }
-
-The callback will pass the following values on completion:
-
-============== ====================== ========
-Value           Type                  Meaning
-============== ====================== ========
-responseModel   IRandomUsernameModel  If non-null, SDK was able to get a random username as per rules defined in KWS dashboard
-============== ====================== ========
-
-The **IRandomUsernameModel** parameter will have the following values:
-
-============== ======== ========
-Field           Type    Meaning
-============== ======== ========
-randomUsername String   The username generated
-============== ======== ========
+  * locally store your session - please refer to the **Local storage of user** document page;
+  * parse the authentication toke - please refer to the **Utils** document page.

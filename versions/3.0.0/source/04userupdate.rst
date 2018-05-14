@@ -1,33 +1,54 @@
 Update a user
 =============
 
-You can update information for the user you're authenticated as by calling:
+You can update information for the user you're authenticated by using the **IUserService** and call:
+
+* **updateUser**
+
+This function will take: 
+
+======== ================ ========
+Value    Type             Meaning
+======== ================ ========
+details  Map<String, Any> A map of the fields to update
+userUd   String           The current authenticated user id
+token    String           The current authenticated user token
+======== ================ ========
 
 .. code-block:: java
 
-  // get an existing user instance
-  KWSUser updatedUser = existingUser;
+   //myEnvironment is considered to be a valid environment 
 
-  // update a field
-  updatedUser.lastName = "Name";
+   val sdk = ComplianceSDK(myEnvironment)
+   val userService = sdk.getService(IUserService::class.java)
 
-  // call the following method to update a users' details
-  KWSChildren.sdk.updateUser (MainActivity.this, new KWSChildrenUpdateUserInterface (){
-    @Overwrite
-    void didUpdateUser (boolean updated) {
-      // handle update
-    }
-  });
+   val details: Map<String, Any> = mapOf(
+                "firstName" to "John",
+                "lastName" to "Doe")
+
+   userService?.updateUser(details = details, userId = 123, token = "AAA.BBB.CCC") { error ->
+
+      if(error == null){
+        //Success!!! All went well.
+      } else {
+        //Uh-oh! It seems there's an error...
+      }
+   }
 
 The callback will pass the following value on completion:
 
-======= ==== ======
-Value   Type Meaning
-======= ==== ======
-updated Bool wether the user could be updated
-======= ==== ======
+======= ========= ======
+Value   Type      Meaning
+======= ========= ======
+error   Throwable If non-null, an error occurred
+======= ========= ======
 
 .. note::
 
 	Please note that if you're trying to update a piece of information you haven't been granted permission for
 	the whole update operation will fail.
+
+
+Allowed fields to update
+------------------------
+

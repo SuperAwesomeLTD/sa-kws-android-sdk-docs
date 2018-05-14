@@ -27,7 +27,9 @@ For the sake of this example, the values considered will be:
 	* **clientID** - "id"
 	* **clientSecret** - "client_secret"
 
-Assuming these config values, you should create a data class environment that extends from the Compliance SDK's **NetworkEnvironment**. Our suggestion of an implementation is as follows:
+Assuming these config values, you should create a data class environment that extends from the Compliance SDK's **NetworkEnvironment**. 
+
+Our suggestion of an implementation is as follows:
 
 .. code-block:: java
 

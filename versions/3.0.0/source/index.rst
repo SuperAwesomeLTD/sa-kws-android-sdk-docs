@@ -40,18 +40,19 @@ Table of Contents
 	 Add the SDK as a JAR library <00addjar>
 	 Overview <01overview>
 	 Initialise the SDK <02session>
+	 Error Responses <02errors>
 	 Creating and authenticating a user<02auth>
 	 Local storage of user <02localstorage>
-   Get user details <03userdetails>
-   Update user <04userupdate>
-   Request permissions <05userpermission>
+	 Random Display Name<02randomdisplayname>
+   	 Get user details <03userdetails>
+   	 Update user <04userupdate>
+   	 Request permissions <05userpermission>
 	 Associate a parent email <06parentemail>
-   Invite friends <07userinvite>
+   	 Invite friends <07userinvite>
 	 Trigger event <08triggerevent>
 	 Get score <09getscore>
 	 Get leaderboard <10getleaderboard>
 	 App data <11appdata>
 	 Firebase <12firebase>
 	 Notifications <13notifications>
-	 Error Responses <14errors>
 	 Utils <15utils>
