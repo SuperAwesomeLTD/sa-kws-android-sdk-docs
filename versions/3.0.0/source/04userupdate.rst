@@ -35,7 +35,7 @@ token    String           The current authenticated user token
       }
    }
 
-A more complex example of an update is where you'd want to update something like the **address**. 
+A more complex example of an update of user details is where you'd want to update something like the **address**. 
 
 This is how you should do it:
 
@@ -56,13 +56,13 @@ This is how you should do it:
         )
 
    //make it a JSON Object
-   val addressModelAsJSONObject = JSONObject(myAddressModel)
+   val myAddressModelAsJSONObject = JSONObject(myAddressModel)
 
    //add it to the details
    val details: Map<String, Any> = mapOf(
-                "firstName" to "Droid",
-                "lastName" to "Test",
-                "address" to addressModelAsJSONObject)
+                "firstName" to "John",
+                "lastName" to "Doe",
+                "address" to myAddressModelAsJSONObject)
 
    userService?.updateUser(details = details, userId = 123, token = "AAA.BBB.CCC") { error ->
 

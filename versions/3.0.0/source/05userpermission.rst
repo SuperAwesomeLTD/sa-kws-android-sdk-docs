@@ -5,74 +5,60 @@ If for any reason your app needs access to specific user information, like first
 to ask permission for it. Kids Web Services will handle sending an explanatory email to the user's parent. From then on the parent will be able to
 access the Parent Portal to manage these permissions.
 
-Thus, to request permission for the user you're authenticated as you'll need to call:
+To request permission for the user you're authenticated as, you'll have to use the **interface service** named **IUserActionsService** and the method to call is:
+
+  * requestPermissions
+
+And it will take:
+
+============ ============ ========
+Field        Type          Meaning
+============ ============ ========
+permissions  List<String> The list of permissions to request
+userId       Integer      The current authenticated user id 
+token        String       The current authenticated user token 
+============ ============ ========
+
+.. note::
+  The permissions you can request can be checked on the Control Panel
+
+.. image:: img/permissionsportal.png
+
+In this example we'll be requesting the permissions for 'accessEmail' and a code snippet of this functionality usage is:
 
 .. code-block:: java
 
-  // create an array of permissions
-  KWSChildrenPermissionType[] permissions = new KWSChildrenPermissionType [] {
-    KWSChildrenPermissionType.AccessEmail,
-    KWSChildrenPermissionType.AccessFirstName
-  };
+  //myEnvironment is considered to be a valid environment
+  val sdk = ComplianceSDK(myEnvironment)
 
-  // request permission
-  KWSChildren.sdk.requestPermission (MainActivity.this,
-                                     permissions,
-                                     new KWSChildrenRequestPermissionInterface()
-  {
-    @Override
-    public void didRequestPermission (KWSChildrenRequestPermissionStatus status) {
+  val userActionsService = sdk.getService(IUserActionsService::class.java)
 
-      switch (status) {
-        case Success:
-          break;
-        case NoParentEmail:
-          break;
-        case NetworkError:
-          break;
+  //set list of available permissions to request
+  val permissions: List<String> = listOf("accessEmail")
+
+  userActionsService?.requestPermissions(permissions = permissions, userId = 123, token = "AAA.BBB.CCC") { error ->
+
+    if(error == null){
+        //Success!!! All went well.
+      } else {
+        //Uh-oh! It seems there's an error...
       }
-    }
-  });
+  }
+
 
 The callback will pass the following values on completion:
 
-====== ================================== ======
-Value  Type                               Meaning
-====== ================================== ======
-status KWSChildrenRequestPermissionStatus End status of the operation
-====== ================================== ======
-
-The **status** parameter may have the following values:
-
-============= ======
-Value         Meaning
-============= ======
-Success       User asked for permission successfully
-NoParentEmail User does not have an attached parent email
-NetworkError  Other network error
-============= ======
-
-And the available permissions are:
-
-+-------------------+
-| **Permission**    |
-+-------------------+
-| AccessEmail       |
-+-------------------+
-| AccessAddress     |
-+-------------------+
-| AccessFirstName   |
-+-------------------+
-| AccessLastName    |
-+-------------------+
-| AccessPhoneNumber |
-+-------------------+
-| SendNewsletter    |
-+-------------------+
+======= ========= ======
+Value   Type      Meaning
+======= ========= ======
+error   Throwable If non-null, an error occurred
+======= ========= ======
 
 .. note::
 
-  Normally just by requesting a permission you won't automatically get access to request or modify the associated bit of information. You'll have to await the parent's decision. You can always check the status in the **KWSUser** object's **KWSPermission** member.
+  Normally just by requesting a permission you won't automatically get access to request or modify the associated bit of information. You'll have to await the parent's decision. 
+
+  You can always check the status in the **IUserDetailsModel** interface model, under **IPermissionModel**.
 
 .. note::
 
