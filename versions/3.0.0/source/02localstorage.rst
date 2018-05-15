@@ -40,7 +40,7 @@ To handle the session and the token data, these models will come in handy.
 
 Speaking of which, what about that **TokenData** model? Well, that's another internal **model** of the SDK that will map the token into readable data.
 
-There's two way of getting the data from the authentication token:
+There's two ways of getting the data from the authentication token:
 	
 	* using the **Utils** class - see documentation page
 	* by storing the user using the **ISessionService** - will be looked into next
@@ -74,9 +74,9 @@ And should look like:
 	//myEnvironment is considered to be a valid environment 
 
 	val sdk = ComplianceSDK(myEnvironment)
-	val authService = sdk.getService(type = ISessionService::class.java)
+	val sessionService = sdk.getService(type = ISessionService::class.java)
 
-	val success = authService?.saveLoggedUser(context = this, user = user)
+	val success = sessionService?.saveLoggedUser(context = this, user = user)
 
 This is a **sync** operation that returns:
 
@@ -108,9 +108,9 @@ And should look like:
 	//myEnvironment is considered to be a valid environment 
 
 	val sdk = ComplianceSDK(myEnvironment)
-	val authService = sdk.getService(type = ISessionService::class.java)
+	val sessionService = sdk.getService(type = ISessionService::class.java)
 
-	val isUserLoggedIn = authService?.isUserLoggedIn(context = this)
+	val isUserLoggedIn = sessionService?.isUserLoggedIn(context = this)
 
 This is a **sync** operation that returns:
 
@@ -142,9 +142,9 @@ And should look like:
 	//myEnvironment is considered to be a valid environment 
 
 	val sdk = ComplianceSDK(myEnvironment)
-	val authService = sdk.getService(type = ISessionService::class.java)
+	val sessionService = sdk.getService(type = ISessionService::class.java)
 
-	val currentStoredUser = authService?.getCurrentUser(context = this) as LoggedUserModel?
+	val currentStoredUser = sessionService?.getCurrentUser(context = this) as LoggedUserModel?
 
 	return currentStoredUser
 
@@ -182,9 +182,9 @@ And should look like:
 	//myEnvironment is considered to be a valid environment 
 
 	val sdk = ComplianceSDK(myEnvironment)
-	val authService = sdk.getService(type = ISessionService::class.java)
+	val sessionService = sdk.getService(type = ISessionService::class.java)
 
-	val success = authService?.clearLoggedUser(context = this)
+	val success = sessionService?.clearLoggedUser(context = this)
 
 This is a **sync** operation that returns:
 

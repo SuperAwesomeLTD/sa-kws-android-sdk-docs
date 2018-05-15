@@ -1,23 +1,30 @@
 Invite friends
 ==============
 
-You can invite other users on behalf of the user you're authenticated as by calling:
+You can invite other users on behalf of the user you're authenticated as by using **IUserActionsService** and calling:
+
+* **inviteUser**
 
 .. code-block:: java
 
-  KWSChildren.sdk.inviteUser (MainActivity.this,
-                              "friend@test.com",
-                              new KWSChildrenInviteUserInterface() {
-    @Override
-    public void didInviteUser (boolean success) {
-      // handle success
-    }
-  });
+   //myEnvironment is considered to be a valid environment 
 
-The callback will pass the following value on completion:
+   val sdk = ComplianceSDK(myEnvironment)
+   val userActionsService = sdk.getService(IUserActionsService::class.java)
 
-======= ==== ======
-Value   Type Meaning
-======= ==== ======
-invited Bool If true, user will receive an email inviting him to your app on behalf of KWS.
-======= ==== ======
+   userActionsService?.inviteUser(email = "friend@test.com", userId = 123, token = "AAA.BBB.CCC") { error ->
+
+      if(error == null){
+        //Success!!! All went well.
+      } else {
+        //Uh-oh! It seems there's an error...
+      }
+   }
+
+The callback will pass the following values on completion:
+
+======= ========= ======
+Value   Type      Meaning
+======= ========= ======
+error   Throwable If non-null, an error occurred
+======= ========= ======

@@ -49,7 +49,7 @@ Table of Contents
    	 Request permissions <05userpermission>
 	 Associate a parent email <06parentemail>
    	 Invite friends <07userinvite>
-	 Trigger event <08triggerevent>
+	 Events <08events>
 	 Get score <09getscore>
 	 Get leaderboard <10getleaderboard>
 	 App data <11appdata>

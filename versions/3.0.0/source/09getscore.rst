@@ -1,26 +1,48 @@
 Get score
 =========
 
-You can get the current score of the use you're authenticated as by calling:
+You can get the current score of the use you're authenticated as by by using **IScoringService** and calling:
+
+* **getScore**
+
+And it will take:
+
+=========== ======= =======
+Field       Type    Meaning
+=========== ======= =======
+appId       Integer The app id
+token       String  The authenticated user token
+=========== ======= =======
+
+.. note::
+ The **appID** can be retrieved from the authenticated token.
 
 .. code-block:: java
 
-  KWSChildren.sdk.getScore (MainActivity.this, new KWSChildrenGetScoreInterface() {
-    @Override
-    public void didGetScore (KWSScore *score) {
-      // handle score
-    }
-  });
+   //myEnvironment is considered to be a valid environment 
+
+   val sdk = ComplianceSDK(myEnvironment)
+   val scoringService = sdk.getService(IScoringService::class.java)
+
+   scoringService?.getScore(appId = 2, token = "AAA.BBB.CCC") { scoreModel, error ->
+
+      if(scoreModel != null){
+        //Success!!! All went well.
+      } else {
+        //Uh-oh! It seems there's an error...
+      }
+   }
 
 The callback will pass the following value on completion:
 
-======= ======== ======
-Value   Type     Meaning
-======= ======== ======
-score   KWSScore If non-null, contains info about a user's current app score
-======= ======== ======
+=========== ===================== ======
+Value   		Type    		  Meaning
+=========== ===================== ======
+userDetails 	IScoreModel       If non-null, the SDK was able to retrieve information about a user
+error           Throwable         If non-null, an error occurred
+=========== ===================== ======
 
-The **KWSScore** object contains the following fields:
+The **IScoreModel** object contains the following fields:
 
 ===== ======= =======
 Field Type    Meaning
