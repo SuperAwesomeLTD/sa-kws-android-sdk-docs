@@ -74,6 +74,4 @@ Then, as seen before, the pattern to follow is:
 
 
 
-
-Once you've initialised the SDK, it's time to authenticate as a user; nearly all of of the functionalities of the SDK assumes you're
-logged in as a user.
+The next order of business is understanding the types of callback we can get when using the SDK.

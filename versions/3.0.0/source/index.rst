@@ -40,7 +40,7 @@ Table of Contents
 	 Add the SDK as a JAR library <00addjar>
 	 Overview <01overview>
 	 Initialise the SDK <02session>
-	 Error Responses <02errors>
+	 Callback types <02callbacktypes>
 	 Creating and authenticating a user<02auth>
 	 Local storage of user <02localstorage>
 	 Random Display Name<02randomdisplayname>

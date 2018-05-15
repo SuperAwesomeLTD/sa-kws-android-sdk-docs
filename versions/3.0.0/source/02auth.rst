@@ -1,6 +1,8 @@
 Creating and authenticating a user
 ==================================
 
+Having seen the different types of callback you can get with the SDK, we'll be starting with actual implementations of the functionalities.
+
 KWS brandable view
 ^^^^^^^^^^^^^^^^^^
 
@@ -231,9 +233,9 @@ token          String   The valid session token of the user
 
 From here on you'll be able to check leaderboards, assign points, enable remote notifications, set app data, etc.
 
-.. note::
+The authentication token
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-  After authenticating a user, you can use the Kid Web Service to:
+The type of tokens used in the Kids Web Service are `JWT Tokens <https://jwt.io/introduction/>`_.
 
-  * locally store your session - please refer to the **Local storage of user** document page;
-  * parse the authentication toke - please refer to the **Utils** document page.
+Next, we'll be describing how to read data from the retrieved token and how to handle a session with the Kids Web Service SDK.

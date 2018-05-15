@@ -14,8 +14,7 @@ userId          Int  	The current authenticated user id
 token           String  The current authenticated user token
 ============== ======== ========
 
-.. note::
-	The tokens used in the Kid Web Services SDK are **JWT Tokens**. These are explained with a bit more detail in the **Utils** page.
+As such:
 
 .. code-block:: java
 
