@@ -53,6 +53,4 @@ Table of Contents
 	 Get score <09getscore>
 	 Get leaderboard <10getleaderboard>
 	 App data <11appdata>
-	 Firebase <12firebase>
-	 Notifications <13notifications>
 	 Utils <15utils>

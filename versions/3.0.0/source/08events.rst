@@ -12,13 +12,13 @@ After creating an event, it should look like this:
 .. image:: img/checkevent.png
 
 Trigger event
-=============
+-------------
 
 You can trigger an event for the user you're authenticated as by using **IUserActionsService** and calling:
 
 * **triggerEvent**
 
-And it will take:
+It will take:
 
 =========== ======= =======
 Field       Type    Meaning
@@ -33,7 +33,9 @@ token       String  The authenticated user token
 
 	Please note that this **eventId** is the **event code**. 
 
-	From the example image, it will be **x9C1QxFj27D7uc8UEjBSz7HqQ**.
+	From the example image, it will be **custom-event-30-points**.
+
+And look like this:
 
 .. code-block:: java
 
@@ -43,10 +45,10 @@ token       String  The authenticated user token
    val userActionsService = sdk.getService(IUserActionsService::class.java)
 
    //your event code as per the Control Panel
-   val eventId = "x9C1QxFj27D7uc8UEjBSz7HqQ"
+   val eventId = "custom-event-30-points"
    
    //the number of points to award
-   val points = 10
+   val points = 30
 
    userActionsService?.triggerEvent(eventId = eventId, points = points, userId = 123, token = "AAA.BBB.CCC") { error ->
 
@@ -67,13 +69,13 @@ error   Throwable If non-null, an error occurred
 
 
 Check event
-===========
+-----------
 
 You can check if an event has been triggered by using **IUserActionsService** and calling:
 
 * **hasTriggeredEvent**
 
-And it will take:
+It will take:
 
 =========== ======= =======
 Field       Type    Meaning
@@ -88,9 +90,9 @@ token       String  The authenticated user token
 
 	Please note that this **eventId** is the **event id**. 
 
-	From the example image, it will be **807**.
+	From the example image, it will be **808**.
 
-An example is:
+And look like this:
 
 .. code-block:: java
 
@@ -100,7 +102,7 @@ An example is:
    val userActionsService = sdk.getService(IUserActionsService::class.java)
 
    //your event id as per the Control Panel
-   val eventId = 807
+   val eventId = 808
 
    userActionsService?.hasTriggeredEvent(eventId = eventId, userId = 123, token = "AAA.BBB.CCC") { responseModel, error ->
 

@@ -1,7 +1,7 @@
 Get score
 =========
 
-You can get the current score of the use you're authenticated as by by using **IScoringService** and calling:
+You can get the current score of the user you're authenticated as by by using **IScoringService** and calling:
 
 * **getScore**
 
@@ -15,7 +15,9 @@ token       String  The authenticated user token
 =========== ======= =======
 
 .. note::
- The **appID** can be retrieved from the authenticated token.
+ The **appId** can be retrieved from the authenticated token.
+
+ As an example, we'll be using **2**.
 
 .. code-block:: java
 
@@ -38,7 +40,7 @@ The callback will pass the following value on completion:
 =========== ===================== ======
 Value   		Type    		  Meaning
 =========== ===================== ======
-userDetails 	IScoreModel       If non-null, the SDK was able to retrieve information about a user
+userDetails 	IScoreModel       If non-null, the SDK was able to a score for the user
 error           Throwable         If non-null, an error occurred
 =========== ===================== ======
 

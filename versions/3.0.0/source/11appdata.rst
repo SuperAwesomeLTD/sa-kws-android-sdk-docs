@@ -1,68 +1,127 @@
 App data
 ========
 
-For each user registered on an app in the Kids Web Services Control Panel you can add custom String-Integer pairs of App Data.
+For each user registered on an app in the Kids Web Services Control Panel you can add and get custom String-Integer pairs of App Data.
 
-You can add a pair of such data for the user you're authenticated as by calling:
+Set app data
+------------
+
+You can add a pair of such data for the user you're authenticated as by using **IUserActionsService** and calling:
+
+* **getAppData**
+
+It will take:
+
+=========== ======= =======
+Field       Type    Meaning
+=========== ======= =======
+userId      Integer The authenticated user id
+appId       Integer The app id
+token       String  The authenticated user token
+=========== ======= =======
+
+.. note::
+ The **appId** can be retrieved from the authenticated token.
+
+ As an example, we'll be using **2**.
+
+And an example is:
 
 .. code-block:: java
 
-  KWSChildren.sdk.setAppData (MainActivity.this,
-                              "app-data",
-                              15,
-                              new KWSChildrenSetAppDataInterface ()
-  {
-    @Override
-    public void didSetAppData (boolean success) {
-      // handle success
-    }
-  });
+   //myEnvironment is considered to be a valid environment 
 
-The method has the following parameters:
+   val sdk = ComplianceSDK(myEnvironment)
+   val userActionsService = sdk.getService(IUserActionsService::class.java)
 
-======= ======= ======
-Value   Type    Meaning
-======= ======= ======
-name    String  the key of the pair
-value   Integer the value associated with the key
-======= ======= ======
+   userActionsService?.getAppData(userId = 123, appId = 2, token = "AAA.BBB.CCC") { appDataWrapperModel, error ->
+
+      if(appDataWrapperModel != null){
+        //Success!!! All went well.
+      } else {
+        //Uh-oh! It seems there's an error...
+      }
+   }
 
 The callback will pass the following value on completion:
 
-======= ==== ======
-Value   Type Meaning
-======= ==== ======
-success Bool whether the network operation was successful
-======= ==== ======
+==================== ===================== ======
+Value                Type                  Meaning
+==================== ===================== ======
+appDataWrapperModel  IAppDataWrapperModel  If non-null, the SDK was able to retrieve information about the app data
+error                Throwable             If non-null, an error occurred
+==================== ===================== ======
+
+The **IAppDataWrapperModel** object contains the following fields:
+
+======= ======================= =======
+Field   Type                    Meaning
+======= ======================= =======
+count   Integer                 The number of items in the app data
+offset  Integer                 The offset of the app data
+limit   Integer                 The limit for the app data
+results ArrayList<AppDataModel> A list of app data
+======= ======================= =======
+
+The **AppDataModel** object contains the following fields:
+
+======= ======== =======
+Field   Type     Meaning
+======= ======== =======
+name    String   The name of the specific data
+value   Integer  Value for the specific data
+======= ======== =======
 
 .. note::
 
   Please note the fact that app data pairs can only by String-Integer. This is in order to further protect users.
 
-If on the other hand you want to get the app data for the user you're authenticated as you can call:
+Get app data
+------------
+
+To get the app data for the user you're authenticated as, you can use **IUserActionsService** and calling:
+
+* **setAppData**
+
+It will take:
+
+======== ======= =======
+Field.   Type    Meaning
+======== ======= =======
+value    String  The value for your data to set
+key      Integer The key name for your data to set
+userId   Integer The authenticated user id
+appId    Integer The app id
+token    String  The authenticated user token
+======== ======= =======
+
+.. note::
+ The **appId** can be retrieved from the authenticated token.
+
+ As an example, we'll be using **2**.
+
+And an example is:
 
 .. code-block:: java
 
-  KWS.sdk.getAppData (MainActivity, new KWSChildrenGetAppDataInterface() {
-    @Override
-    public void didGetAppData (List<KWSAppData*> *appData) {
-      // handle app data
-	  }
-  });
+   //myEnvironment is considered to be a valid environment 
 
-The callback will pass the following value on completion:
+   val sdk = ComplianceSDK(myEnvironment)
+   val userActionsService = sdk.getService(IUserActionsService::class.java)
 
-======= =================== ======
-Value   Type                Meaning
-======= =================== ======
-appData Array of KWSAppData An array of KWSAppData objects
-======= =================== ======
+   userActionsService?.setAppData(value = 1, key = "your_key_name", userId = 123, appId = 2, token = "AAA.BBB.CCC") { error ->
 
-The **KWSAppData** object contains the following fields:
+      if(error == null){
+        //Success!!! All went well.
+      } else {
+        //Uh-oh! It seems there's an error...
+      }
+   }
 
-===== ======= =======
-Field Type    Meaning
-===== ======= =======
-name  String  The name key of the App Data pair
-value Integer The value of the App Data pair
-===== ======= =======
+The callback will pass the following values on completion:
+
+======= ========= ======
+Value   Type      Meaning
+======= ========= ======
+error   Throwable If non-null, an error occurred
+======= ========= ======

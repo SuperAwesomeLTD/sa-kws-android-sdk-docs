@@ -2,7 +2,7 @@ Associate a parent email
 ========================
 
 .. note::
-  This is the same behaviour as the **Update user** page. Only highlighted due to the importance of this functionality relating to the permissions.
+  This is the same behaviour as the **Update user** page. Only highlighted due to the importance of this functionality related to the permissions request.
 
 You can associate a parent email for the user you're authenticated using the **IUserService** and call:
 
