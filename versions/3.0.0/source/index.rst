@@ -37,7 +37,6 @@ Table of Contents
    :maxdepth: 2
 
 	 Add the SDK through Gradle <00addgradle>
-	 Add the SDK as a JAR library <00addjar>
 	 Overview <01overview>
 	 Initialise the SDK <02session>
 	 Callback types <02callbacktypes>
