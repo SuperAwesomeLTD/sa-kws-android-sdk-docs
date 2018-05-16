@@ -51,7 +51,7 @@ Field 		Type 					Meaning
 =========== ======================= ==========
 code 		Integer  				The error code, optional value
 codeMeaning String 				   	The code meaning, optional value
-invalid     IInvalidTypeErrorModel 	The error message, optional value
+invalid     IInvalidTypeErrorModel 	The invalid wrapper object, optional value
 message 	String 				   	The error message, optional value
 error 		String 				   	A different type of error, optional value
 errorCode 	String 				   	A different type of error code, optional value

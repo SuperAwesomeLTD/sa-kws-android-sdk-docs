@@ -21,10 +21,12 @@ You can obtain these credentials from the **Integration** section of your Kids W
 
 They should be different for each app you have.
 
-For the sake of this example, the values considered will be:
+.. note::
+
+	For the sake of this example, the values considered will be:
 
 	* **domain** - "https://kwsapi.demo.superawesome.tv/"
-	* **clientID** - "id"
+	* **clientID** - "client_id"
 	* **clientSecret** - "client_secret"
 
 Assuming these config values, you should create a data class environment that extends from the Compliance SDK's **NetworkEnvironment**. 
@@ -34,7 +36,7 @@ Our suggestion of an implementation is as follows:
 .. code-block:: java
 
 	data class MyEnvironment(override val domain: String = "https://kwsapi.demo.superawesome.tv",
-	                         override val clientID: String = "id",
+	                         override val clientID: String = "client_id",
 	                         override val clientSecret: String = "client_secret") : NetworkEnvironment
 	                         
 
