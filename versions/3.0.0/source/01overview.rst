@@ -54,7 +54,7 @@ Assuming an already setup environment as **myEnvironment** and an interface serv
   
   myService.methodCall() //call the method
 
-Since most operations performed by the SDK involve doing network requests on KWS API, most method calls won't have a return type but will instead require a callback, defined as a Kotlin interface with a variable number of parameters.
+Since most operations performed by the SDK involve doing network requests on KWS API, most method calls won't have a return type but will instead require a callback, defined as a Kotlin lambda function with a variable number of parameters.
 
 The most frequent type of method call and callback is where a **responseModel** or an **error** will be present.
 
