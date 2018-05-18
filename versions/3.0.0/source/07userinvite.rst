@@ -7,8 +7,7 @@ You can invite other users on behalf of the user you're authenticated as by usin
 
 .. code-block:: java
 
-   //myEnvironment is considered to be a valid environment 
-
+   val myEnvironment = MyEnvironment()
    val sdk = ComplianceSDK(myEnvironment)
    val userActionsService = sdk.getService(IUserActionsService::class.java)
 

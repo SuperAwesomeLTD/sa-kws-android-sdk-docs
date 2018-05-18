@@ -17,8 +17,7 @@ token    String           The current authenticated user token
 
 .. code-block:: java
 
-   //myEnvironment is considered to be a valid environment 
-
+   val myEnvironment = MyEnvironment()
    val sdk = ComplianceSDK(myEnvironment)
    val userService = sdk.getService(IUserService::class.java)
 
@@ -41,11 +40,9 @@ This is how you should do it:
 
 .. code-block:: java
 
-   //myEnvironment is considered to be a valid environment 
-
+   val myEnvironment = MyEnvironment()
    val sdk = ComplianceSDK(myEnvironment)
    val userService = sdk.getService(IUserService::class.java)
-
 
    //build your address model
    val myAddressModel = mapOf(

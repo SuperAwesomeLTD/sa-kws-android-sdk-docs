@@ -26,7 +26,7 @@ This will be using the **IUsernameService** interface service briefly mentioned 
 	usernameService?.getRandomUsername { model, error ->
 
 	    if (model != null) {
-	        //Success! We have a 'model we can use. Let's get the username
+	        //Success! We have a 'model' we can use. Let's get the username
 	        val myGeneratedRandomUsername = model.randomUsername
 	    } else {
 	        //Uh-oh! It seems there's an error...

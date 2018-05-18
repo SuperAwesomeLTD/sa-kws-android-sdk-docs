@@ -86,6 +86,4 @@ By design, the way this is done is having a single callback paramenter, as such:
       }
   }
 
-.. note::
-
-  All callback interfaces in the Kids Web Services SDK will only have one method call, thus making them suitable for Java 8 and Lambda notation.
+Let's now have a look on how to properly initialise the SDK.

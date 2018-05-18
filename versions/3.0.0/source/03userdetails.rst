@@ -18,8 +18,7 @@ As such:
 
 .. code-block:: java
 
-	//myEnvironment is considered to be a valid environment 
-
+	val myEnvironment = MyEnvironment()
 	val sdk = ComplianceSDK(myEnvironment)
 	val userService = sdk.getService(IUserService::class.java)
 

@@ -29,8 +29,7 @@ And an example is:
 
 .. code-block:: java
 
-   //myEnvironment is considered to be a valid environment 
-
+   val myEnvironment = MyEnvironment()
    val sdk = ComplianceSDK(myEnvironment)
    val userActionsService = sdk.getService(IUserActionsService::class.java)
 
@@ -104,8 +103,7 @@ And an example is:
 
 .. code-block:: java
 
-   //myEnvironment is considered to be a valid environment 
-
+   val myEnvironment = MyEnvironment()
    val sdk = ComplianceSDK(myEnvironment)
    val userActionsService = sdk.getService(IUserActionsService::class.java)
 

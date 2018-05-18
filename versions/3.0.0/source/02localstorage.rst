@@ -71,10 +71,11 @@ And should look like:
 
 .. code-block:: java
 
-	//myEnvironment is considered to be a valid environment 
-
+	val myEnvironment = MyEnvironment()
 	val sdk = ComplianceSDK(myEnvironment)
 	val sessionService = sdk.getService(type = ISessionService::class.java)
+
+	//'user' is considered a valid model, as a LoggedUserModelProtocol implementation
 
 	val success = sessionService?.saveLoggedUser(context = this, user = user)
 
@@ -105,8 +106,7 @@ And should look like:
 
 .. code-block:: java
 
-	//myEnvironment is considered to be a valid environment 
-
+	val myEnvironment = MyEnvironment()
 	val sdk = ComplianceSDK(myEnvironment)
 	val sessionService = sdk.getService(type = ISessionService::class.java)
 
@@ -139,8 +139,7 @@ And should look like:
 
 .. code-block:: java
 
-	//myEnvironment is considered to be a valid environment 
-
+	val myEnvironment = MyEnvironment()
 	val sdk = ComplianceSDK(myEnvironment)
 	val sessionService = sdk.getService(type = ISessionService::class.java)
 
@@ -179,8 +178,7 @@ And should look like:
 
 .. code-block:: java
 
-	//myEnvironment is considered to be a valid environment 
-
+	val myEnvironment = MyEnvironment()
 	val sdk = ComplianceSDK(myEnvironment)
 	val sessionService = sdk.getService(type = ISessionService::class.java)
 

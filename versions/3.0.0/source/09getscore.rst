@@ -21,8 +21,7 @@ token       String  The authenticated user token
 
 .. code-block:: java
 
-   //myEnvironment is considered to be a valid environment 
-
+   val myEnvironment = MyEnvironment()
    val sdk = ComplianceSDK(myEnvironment)
    val scoringService = sdk.getService(IScoringService::class.java)
 

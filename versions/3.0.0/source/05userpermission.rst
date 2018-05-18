@@ -28,9 +28,8 @@ In this example we'll be requesting the permissions for 'accessEmail' and a code
 
 .. code-block:: java
 
-  //myEnvironment is considered to be a valid environment
+  val myEnvironment = MyEnvironment()
   val sdk = ComplianceSDK(myEnvironment)
-
   val userActionsService = sdk.getService(IUserActionsService::class.java)
 
   //set list of available permissions to request

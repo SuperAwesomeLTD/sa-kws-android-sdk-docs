@@ -78,8 +78,7 @@ As such:
 
 .. code-block:: java
 
-    //myEnvironment is considered to be a valid environment 
-    
+    val myEnvironment = MyEnvironment()    
     val sdk = ComplianceSDK(myEnvironment)
     val singleSignOnService = sdk.getService(type = ISingleSignOnService::class.java)
 
@@ -143,8 +142,7 @@ As such:
 
   //'timeZone' is a value that the KWS API will not support at the moment, needs to be set as null
 
-  //myEnvironment is considered to be a valid environment 
-
+  val myEnvironment = MyEnvironment()
   val sdk = ComplianceSDK(myEnvironment)
   val authService = sdk.getService(type = IAuthService::class.java)
 
@@ -199,8 +197,7 @@ As such:
 
 .. code-block:: java
 
-  //myEnvironment is considered to be a valid environment 
-
+  val myEnvironment = MyEnvironment()
   val sdk = ComplianceSDK(myEnvironment)
   val authService = sdk.getService(type = IAuthService::class.java)
 
