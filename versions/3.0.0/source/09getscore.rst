@@ -36,14 +36,14 @@ token       String  The authenticated user token
 
 The callback will pass the following value on completion:
 
-=========== ===================== ======
-Value   		Type    		  Meaning
-=========== ===================== ======
-userDetails 	IScoreModel       If non-null, the SDK was able to a score for the user
-error           Throwable         If non-null, an error occurred
-=========== ===================== ======
+=========== ============ ======
+Value   		Type    		 Meaning
+=========== ============ ======
+userDetails IScoreModel  If non-null, the SDK was able to a score for the user
+error       Throwable    If non-null, an error occurred
+=========== ============ ======
 
-The **IScoreModel** object contains the following fields:
+The **IScoreModel** contains the following fields:
 
 ===== ======= =======
 Field Type    Meaning

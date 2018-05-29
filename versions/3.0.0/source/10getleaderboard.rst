@@ -45,18 +45,18 @@ leadersWrapperModel  ILeadersWrapperModel  If non-null, the SDK was able to retr
 error                Throwable             If non-null, an error occurred
 ==================== ===================== ======
 
-The **ILeadersWrapperModel** object contains the following fields:
+The **ILeadersWrapperModel** contains the following fields:
 
 ======= ======================= =======
 Field   Type                    Meaning
 ======= ======================= =======
-results ArrayList<LeadersModel> A list of leaderboards
+results ArrayList<ILeaderModel> A list of leaderboards
 count   Integer                 The number of items in the leaderboard
 offset  Integer                 The offset of the leaderboard
 limit   Integer                 The limit for the leaderboard
 ======= ======================= =======
 
-The **LeadersModel** object contains the following fields:
+The **ILeaderModel** contains the following fields:
 
 ======= ======== =======
 Field   Type     Meaning

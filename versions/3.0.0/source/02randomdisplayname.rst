@@ -42,7 +42,7 @@ username        IRandomUsernameModel  If non-null, SDK was able to get a random 
 error           Throwable             If non-null, an error occurred
 ============== ====================== ========
 
-The **IRandomUsernameModel** parameter will have the following values:
+The **IRandomUsernameModel** will have the following values:
 
 ============== ======== ========
 Field           Type    Meaning

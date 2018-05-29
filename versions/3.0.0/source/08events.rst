@@ -104,7 +104,7 @@ And look like this:
 
    userActionsService?.hasTriggeredEvent(eventId = eventId, userId = 123, token = "AAA.BBB.CCC") { responseModel, error ->
 
-      if(error == null){
+      if(responseModel != null){
         //Success!!! All went well.
       } else {
         //Uh-oh! It seems there's an error...
@@ -113,8 +113,18 @@ And look like this:
 
 The callback will pass the following values on completion:
 
-======= ========= ======
-Value   Type      Meaning
-======= ========= ======
-error   Throwable If non-null, an error occurred
-======= ========= ======
+======= ======================= ======
+Value   Type                    Meaning
+======= ======================= ======
+error   IHasTriggeredEventModel If non-null, the SDK was able to validate if an event has been triggered
+error   Throwable               If non-null, an error occurred
+======= ======================= ======
+
+The **IHasTriggeredEventModel** has the following fields:
+
+================= ======== =======
+Field             Type     Meaning
+================= ======== =======
+hasTriggeredEvent Boolean  Unique Id of the user
+name              String   Username for this app only
+================= ======== =======

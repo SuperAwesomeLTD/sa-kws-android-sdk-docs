@@ -220,7 +220,7 @@ user            ILoggedUserModel  If non-null, the SDK was able to authenticate 
 error           Throwable         If non-null, an error occurred
 ============== ================== ========
 
-The **ILoggedUserModel** parameter will have the following values:
+The **ILoggedUserModel** will have the following values:
 
 ============== ======== ========
 Field           Type    Meaning

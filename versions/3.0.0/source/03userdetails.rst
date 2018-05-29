@@ -34,14 +34,14 @@ As such:
 
 The callback will pass the following values on completion:
 
-=========== ===================== ======
-Value   		Type    		  Meaning
-=========== ===================== ======
-userDetails 	IUserDetailsModel If non-null, the SDK was able to retrieve information about a user
-error           Throwable         If non-null, an error occurred
-=========== ===================== ======
+=========== ================= ======
+Value   		Type          Meaning
+=========== ================= ======
+userDetails IUserDetailsModel If non-null, the SDK was able to retrieve information about a user
+error       Throwable         If non-null, an error occurred
+=========== ================= ======
 
-The **IUserDetailsModel** object has the following fields:
+The **IUserDetailsModel** has the following fields:
 
 ====================== ======================== =======
 Field                  Type                  	Meaning
@@ -58,13 +58,13 @@ isMinor                Boolean               	Flag if user is a minor
 hasSetParentEmail	   String				 	Flag if a parent email has been set
 consentAgeForCountry   Int				 	 	Age for minimum check if user is a minor
 createdAt   		   String				 	Date of user creation
-address                IAddressModel          	Address object
-points                 IPointsModel             Points object
-applicationPermissions IPermissionsModel        Available permissions object
-applicationProfile     IApplicationProfileModel Application profile object
+address                IAddressModel          	Address definition
+points                 IPointsModel             Points definition
+applicationPermissions IPermissionsModel        Available permissions definition
+applicationProfile     IApplicationProfileModel Application profile definition
 ====================== ======================== =======
 
-The **IAddressModel** object has the following fields:
+The **IAddressModel** has the following fields:
 
 ============ ========== ========
 Field 	 	 Type    	Meaning
@@ -77,7 +77,7 @@ countryCode  String 	Country code of user
 countryName  String 	Country name of user
 ============ ========== ========
 
-The **IPointsModel** object has the following fields:
+The **IPointsModel** has the following fields:
 
 ======== ======= ========
 Field 	 Type    Meaning
@@ -89,7 +89,7 @@ inApp 	 Integer Points received in this app
 balance  Integer Available balance
 ======== ======= ========
 
-The **IPermissionsModel** object has the following fields:
+The **IPermissionsModel** has the following fields:
 
 ============= ==== =======
 Field         Type Meaning
@@ -106,7 +106,7 @@ notifications Bool If the user's parent allows your app to send push notificatio
 newsletter    Bool If the user's parent allows your app to send newsletters
 ============= ==== =======
 
-The **IApplicationProfileModel** object has a set of custom fields, specific for each app:
+The **IApplicationProfileModel** has a set of custom fields, specific for each app:
 
 ============= ======== =======
 Field         Type 	   Meaning
@@ -119,7 +119,7 @@ customField2  Integer  If the user's parent allows your app to access user's las
 
 .. note::
 
-	Please note that depending on the available permissions you have (detailed in the **PermissionsModel** object) you may or may not
+	Please note that depending on the available permissions you have (detailed in the **IPermissionsModel**) you may or may not
 	see the various pieces of information associated with a user.
 
 .. note::

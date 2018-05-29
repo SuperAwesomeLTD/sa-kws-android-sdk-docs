@@ -51,18 +51,18 @@ appDataWrapperModel  IAppDataWrapperModel  If non-null, the SDK was able to retr
 error                Throwable             If non-null, an error occurred
 ==================== ===================== ======
 
-The **IAppDataWrapperModel** object contains the following fields:
+The **IAppDataWrapperModel** contains the following fields:
 
-======= ======================= =======
-Field   Type                    Meaning
-======= ======================= =======
-count   Integer                 The number of items in the app data
-offset  Integer                 The offset of the app data
-limit   Integer                 The limit for the app data
-results ArrayList<AppDataModel> A list of app data
-======= ======================= =======
+======= ========================= =======
+Field   Type                      Meaning
+======= ========================= =======
+count   Integer                   The number of items in the app data
+offset  Integer                   The offset of the app data
+limit   Integer                   The limit for the app data
+results ArrayList<IAppDataModel>  A list of app data
+======= ========================= =======
 
-The **AppDataModel** object contains the following fields:
+The **IAppDataModel** contains the following fields:
 
 ======= ======== =======
 Field   Type     Meaning

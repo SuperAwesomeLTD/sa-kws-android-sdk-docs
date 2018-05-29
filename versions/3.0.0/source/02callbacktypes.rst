@@ -44,7 +44,7 @@ When something goes wrong while using the Kids Web Services functionalities, an 
 
 This error response is in a form of a KWS **IErrorWrapperModel** - as the name suggests, this will be a wrapper around the errors that can occur.
 
-The **IErrorWrapperModel** object has the following fields:
+The **IErrorWrapperModel** has the following fields:
 
 =========== ======================= ==========
 Field 		Type 					Meaning
@@ -57,7 +57,7 @@ error 		String 				   	A different type of error, optional value
 errorCode 	String 				   	A different type of error code, optional value
 =========== ======================= ==========
 
-The **IInvalidTypeErrorWrapperModel** object has the following fields:
+The **IInvalidTypeErrorWrapperModel** has the following fields:
 
 =============== ============ ========
 Field  			Type     	 Meaning
@@ -74,7 +74,7 @@ parentEmail 	IErrorModel  The invalid type of 'parentEmail', optional value
 permissions 	IErrorModel  The invalid type of 'permissions', optional value
 =============== ============ ========
 
-The **IErrorModel** object has the following fields:
+The **IErrorModel** has the following fields:
 
 =========== ======== ========
 Field 		Type     Meaning
@@ -107,3 +107,7 @@ We will now see an example of an actual error and our suggestion on how to deal 
 	    //use the new error model accordingly
 	  }
 	}
+
+.. note::
+  
+  Please note that the type of error on a calback is, at it's core, the `Kotlin Throwable <https://developer.apple.com/documentation/swift/error>`_ 

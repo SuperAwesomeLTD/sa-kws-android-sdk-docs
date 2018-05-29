@@ -18,7 +18,7 @@ userId   String           The current authenticated user id
 token    String           The current authenticated user token
 ======== ================ ========
 
-  .. code-block:: java
+.. code-block:: java
 
    val myEnvironment = MyEnvironment()
    val sdk = ComplianceSDK(myEnvironment)
